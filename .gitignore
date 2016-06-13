@@ -12,6 +12,8 @@
 #.idea
 /.idea
 
+/src/androidTest
+
 #imls
 *.iml
 *.iml
