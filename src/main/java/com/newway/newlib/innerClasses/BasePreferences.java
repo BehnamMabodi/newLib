@@ -9,17 +9,24 @@ import android.graphics.Typeface;
  */
 public class BasePreferences {
 
-    private static boolean mIsInitialized;
-    private static SharedPreferences mSPrefs;
-    private static boolean mForcePersian = false;
-    private static Typeface mPersianTypeFace;
+    protected static boolean mIsInitialized;
+    protected static SharedPreferences mSPrefs;
+    protected static boolean mForcePersian = false;
+    protected static Typeface mPersianTypeFace;
 
-    public BasePreferences(Context context){
-        if(!mIsInitialized) {
+    public BasePreferences(Context context, String fontAssetLocation) {
+        if (!mIsInitialized) {
             mSPrefs = context.getSharedPreferences(context.getPackageName(), Context.MODE_PRIVATE);
-            mPersianTypeFace = Typeface.createFromAsset(context.getAssets() , "fonts/")
+            mPersianTypeFace = Typeface.createFromAsset(context.getAssets(), fontAssetLocation);
+            mIsInitialized = true;
         }
     }
 
+    public Typeface getTypeface() {
+        return mPersianTypeFace;
+    }
 
+    public boolean isForcedPersian() {
+        return mForcePersian;
+    }
 }
