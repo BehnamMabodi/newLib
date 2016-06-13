@@ -1,0 +1,217 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">4dp</dimen>
+    <dimen name="activity_vertical_margin">4dp</dimen>
+
+    <dimen name="ListView_Space">2dp</dimen>
+    <dimen name="Unit_view_height">74dp</dimen>
+
+    <dimen name="Unit_avatar_margin_right">16dp</dimen>
+
+    <dimen name="Unit_components_margin_right">16dp</dimen>
+    <dimen name="Unit_components_margin_left">@dimen/Unit_components_margin_left_master</dimen>
+    <dimen name="Unit_components_margin_top">8dp</dimen>
+    <dimen name="Unit_components_margin_bottom">8dp</dimen>
+
+    <dimen name="Unit_components_margin_top_master">24dp</dimen>
+    <dimen name="Unit_components_margin_bottom_master">24dp</dimen>
+    <dimen name="Unit_components_margin_left_master">16dp</dimen>
+    <dimen name="Unit_components_margin_right_master">16dp</dimen>
+
+    <dimen name="Unit_view_slider_margin_bottom">14dp</dimen>
+    <dimen name="Unit_view_slider_margin_top">18dp</dimen>
+    <dimen name="Unit_view_slider_margin_right">0dp</dimen>
+    <dimen name="Unit_view_slider_margin_left">0dp</dimen>
+
+
+    <dimen name="Unit_view_number_margin_top">62dp</dimen>
+
+    <dimen name="Unit_view_number_add_width">36dp</dimen>
+    <dimen name="Unit_view_number_add_margin_right">0dp</dimen>
+    <dimen name="Unit_view_number_add_margin_left">0dp</dimen>
+    <dimen name="Unit_view_number_add_margin_bottom">7dp</dimen>
+    <dimen name="Unit_view_number_add_padding">0dp</dimen>
+
+
+    <dimen name="FAB_HorizontalMargin">16dp</dimen>
+
+
+    <dimen name="ActionbarTabHeight">48dp</dimen>
+    <dimen name="ListViewTopMargin">0dp</dimen>
+
+
+
+
+    <!-- For Sliding Up Panel-->
+    <dimen name="SlidingUpPanel_ClosedSize">56dp</dimen>
+    <dimen name="slidingPanel_width">@dimen/match_parent</dimen>
+    <dimen name="slidingPanel_textSize">14dp</dimen>
+    <dimen name="slidingPanel_component_padding_drawable">4dp</dimen>
+    <dimen name="slidingPanel_component_margin_top">19dp</dimen>
+    <dimen name="slidingPanel_component_margin_h_master">8dp</dimen>
+    <dimen name="slidingPanel_component_margin_h">8dp</dimen>
+
+    <dimen name="slidingPanel_component_capacity_troops">85dp</dimen>
+    <dimen name="slidingPanel_component_capacity_spell">80dp</dimen>
+
+
+
+
+
+
+    <dimen name="match_parent">-1px</dimen>
+    <dimen name="wrap_content">-2px</dimen>
+
+
+
+    <dimen name="TextSizeDisplayLarge">34sp</dimen>
+    <dimen name="MaterialButton_TextSize">15sp</dimen> <!-- Title for persian: bold 15sp , english: medium 14sp -->
+
+
+    <dimen name="TextSize_Title">21sp</dimen>  <!-- Title for persian: bold 21sp , english: medium 20sp -->
+
+    <dimen name="TextSize_Body1">15sp</dimen> <!-- Title for persian: Regular 15sp , english: Regular 14sp -->
+
+    <dimen name="TextSize_SubHeading">17sp</dimen> <!-- for persian: 17sp Regular  , english: 16sp  all regular -->
+
+    <dimen name="TextSize_PrimaryTitle">@dimen/TextSize_SubHeading</dimen> <!-- FromDoc This Should Be: Subheading-->
+    <dimen name="TextSize_PrimarySubTitle">@dimen/TextSize_Body1</dimen> <!-- FromDoc This Should Be: Body1 Regular-->
+
+
+    <dimen name="MaterialButton_Title">14sp</dimen>
+
+
+    <!-- For Unit Dialog -->
+
+    <dimen name="UnitDialog_DialogMinMaxWidth">254dp</dimen>
+    <dimen name="UnitDialog_DialogMinMaxHeight">310dp</dimen>
+
+    <dimen name="UnitDialog_LevelButtonPadding">4dp</dimen>
+    <dimen name="UnitDialog_LevelButtonIncreasedWidth">222dp</dimen>
+    <dimen name="UnitDialog_LevelButtonSelectorTextSize">14sp</dimen>
+
+
+
+    <!-- Ratio: 2:3 -->
+    <dimen name="UnitDialog_HeaderHeight">56dp</dimen>
+
+
+
+
+    <!-- //////////////////////// -->
+
+
+    <!-- From Android Source-->
+    <!-- Preference activity, vertical padding for the header list -->
+    <dimen name="preference_screen_header_vertical_padding_material">0dp</dimen>
+
+    <!-- Preference activity side margins -->
+    <dimen name="preference_screen_side_margin_material">0dp</dimen>
+    <!-- Preference activity side margins negative-->
+    <dimen name="preference_screen_side_margin_negative_material">0dp</dimen>
+
+    <!-- Preference fragment padding, sides -->
+    <dimen name="preference_fragment_padding_side_material">8dp</dimen>
+
+    <!-- Preference breadcrumbs padding, start padding -->
+    <dimen name="preference_breadcrumbs_padding_start_material">12dp</dimen>
+
+    <!-- Preference breadcrumbs padding, end padding -->
+    <dimen name="preference_breadcrumbs_padding_end_material">24dp</dimen>
+
+    <dimen name="preference_screen_header_padding_side_material">0dp</dimen>
+
+    <!-- Default height of an action bar. -->
+    <dimen name="action_bar_default_height_material">56dp</dimen>
+    <!-- Default padding of an action bar. -->
+    <dimen name="action_bar_default_padding_material">4dp</dimen>
+    <!-- Default content inset of an action bar. -->
+    <dimen name="action_bar_content_inset_material">16dp</dimen>
+    <!-- Vertical padding around action bar icons. -->
+    <dimen name="action_bar_icon_vertical_padding_material">16dp</dimen>
+    <!-- Top margin for action bar subtitles -->
+    <dimen name="action_bar_subtitle_top_margin_material">-3dp</dimen>
+    <!-- Bottom margin for action bar subtitles -->
+    <dimen name="action_bar_subtitle_bottom_margin_material">5dp</dimen>
+
+    <!-- Default padding for list items. This should match the action bar
+         content inset so that ListActivity items line up correctly. -->
+    <dimen name="list_item_padding_horizontal_material">@dimen/action_bar_content_inset_material</dimen>
+
+    <!-- Padding to add to the start of the overflow action button. -->
+    <dimen name="action_bar_navigation_padding_start_material">0dp</dimen>
+    <!-- Padding to add to the start of the overflow action button. -->
+    <dimen name="action_bar_overflow_padding_start_material">6dp</dimen>
+    <!-- Padding to add to the end of the overflow action button. -->
+    <dimen name="action_bar_overflow_padding_end_material">10dp</dimen>
+    <dimen name="action_bar_elevation_material">4dp</dimen>
+
+    <dimen name="action_button_min_width_overflow_material">36dp</dimen>
+    <dimen name="action_button_min_width_material">48dp</dimen>
+    <dimen name="action_button_min_height_material">48dp</dimen>
+
+    <dimen name="text_size_display_4_material">112sp</dimen>
+    <dimen name="text_size_display_3_material">56sp</dimen>
+    <dimen name="text_size_display_2_material">45sp</dimen>
+    <dimen name="text_size_display_1_material">34sp</dimen>
+    <dimen name="text_size_headline_material">24sp</dimen>
+    <dimen name="text_size_title_material">20sp</dimen>
+    <dimen name="text_size_subhead_material">16sp</dimen>
+    <dimen name="text_size_title_material_toolbar">20dp</dimen>
+    <dimen name="text_size_subtitle_material_toolbar">16dp</dimen>
+    <dimen name="text_size_menu_material">16sp</dimen>
+    <dimen name="text_size_body_2_material">14sp</dimen>
+    <dimen name="text_size_body_1_material">14sp</dimen>
+    <dimen name="text_size_caption_material">12sp</dimen>
+    <dimen name="text_size_button_material">14sp</dimen>
+
+    <dimen name="text_size_large_material">22sp</dimen>
+    <dimen name="text_size_medium_material">18sp</dimen>
+    <dimen name="text_size_small_material">14sp</dimen>
+
+    <dimen name="floating_window_z">16dp</dimen>
+    <dimen name="floating_window_margin_left">16dp</dimen>
+    <dimen name="floating_window_margin_top">8dp</dimen>
+    <dimen name="floating_window_margin_right">16dp</dimen>
+    <dimen name="floating_window_margin_bottom">32dp</dimen>
+
+    <!-- Elevation when button is pressed -->
+    <dimen name="button_elevation_material">2dp</dimen>
+    <!-- Z translation to apply when button is pressed -->
+    <dimen name="button_pressed_z_material">4dp</dimen>
+    <!-- Default insets (outer padding) around buttons -->
+    <dimen name="button_inset_vertical_material">6dp</dimen>
+    <dimen name="button_inset_horizontal_material">@dimen/control_inset_material</dimen>
+    <!-- Default inner padding within buttons -->
+    <dimen name="button_padding_vertical_material">@dimen/control_padding_material</dimen>
+    <dimen name="button_padding_horizontal_material">8dp</dimen>
+
+    <!-- Default insets (outer padding) around controls -->
+    <dimen name="control_inset_material">4dp</dimen>
+    <!-- Default inner padding within controls -->
+    <dimen name="control_padding_material">4dp</dimen>
+    <!-- Default rounded corner for controls -->
+    <dimen name="control_corner_material">2dp</dimen>
+
+    <dimen name="edit_text_inset_horizontal_material">4dp</dimen>
+    <dimen name="edit_text_inset_top_material">10dp</dimen>
+    <dimen name="edit_text_inset_bottom_material">7dp</dimen>
+
+    <dimen name="dialog_padding_material">24dp</dimen>
+    <dimen name="dialog_padding_top_material">18dp</dimen>
+
+    <!-- Padding above and below selection dialog lists. -->
+    <dimen name="dialog_list_padding_vertical_material">8dp</dimen>
+
+
+
+
+    <!-- MULTI WINDOW Sizes -->
+    <dimen name="app_defaultsize_w">632.0dip</dimen>
+
+    <dimen name="app_defaultsize_h">598.0dip</dimen>
+
+    <dimen name="app_minimumsize_w">632.0dip</dimen>
+
+    <dimen name="app_minimumsize_h">598.0dip</dimen>
+</resources>

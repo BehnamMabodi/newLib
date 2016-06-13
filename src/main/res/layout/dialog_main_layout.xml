@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/Dialog_MainLayout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/colorBackgroundMaterialWhite">
+        <newway.clashofclanscalculator.MyClasses.Widget.TextViewRTL
+            android:id="@+id/Dialog_Title"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/UnitDialog_HeaderHeight"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:textColor="@color/colorTextOverPrimaryBackground"
+            android:textSize="@dimen/TextSizeDisplayLarge"/>
+
+        <newway.clashofclanscalculator.MyClasses.Widget.ButtonRTL
+            android:id="@+id/DialogButton_OK"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:textStyle="bold"
+            android:textSize="@dimen/MaterialButton_TextSize"
+            style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
+            android:textAllCaps="true"
+            android:textColor="@color/colorTextTitle"
+            android:text="@android:string/ok"
+            android:layout_marginLeft="12dp"
+            android:layout_alignParentBottom="true"/>
+        <newway.clashofclanscalculator.MyClasses.Widget.ButtonRTL
+            android:id="@+id/DialogButton_Cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@android:string/cancel"
+            android:textColor="@color/colorTextTitle"
+            android:textStyle="bold"
+            android:textSize="@dimen/MaterialButton_TextSize"
+            style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
+            android:textAllCaps="true"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@+id/DialogButton_OK"/>
+
+    <ScrollView
+        android:id="@+id/Dialog_ContentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/DialogButton_OK"
+        android:layout_below="@id/Dialog_Title"
+        android:layout_centerHorizontal="true">
+
+            <TextView
+                android:id="@+id/Dialog_ContentTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+    </ScrollView>
+
+
+</RelativeLayout>

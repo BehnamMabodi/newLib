@@ -1,0 +1,17 @@
+<resources>
+    <!-- Dimens Customized For Sliding Up Panel Only-->
+
+    <dimen name="slidingPanel_width">704dp</dimen>
+
+
+
+
+    <!-- For Unit Dialog -->
+    <dimen name="UnitDialog_DialogMinMaxWidth">414dp</dimen>
+<!--
+    <dimen name="UnitDialog_DialogMinMaxWidth">448dp</dimen>
+-->
+
+
+    <!-- //////////////////////// -->
+</resources>

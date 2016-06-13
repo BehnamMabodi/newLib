@@ -1,0 +1,32 @@
+<resources>
+
+<!--    <dimen name="Unit_view_height">128dp</dimen>
+
+    <dimen name="Unit_components_margin_top_master">32dp</dimen>
+    <dimen name="Unit_components_margin_right_master">32dp</dimen>
+
+    <dimen name="Unit_view_number_margin_top">72dp</dimen>
+
+    <dimen name="Unit_view_slider_margin_bottom">24dp</dimen>
+
+    <dimen name="ListViewTopMargin">0dp</dimen>
+
+    <dimen name="SlidingUpPanel_ClosedSize">64dp</dimen>
+
+
+    &lt;!&ndash; Dimens Customized For Sliding Up Panel Only&ndash;&gt;
+
+    <dimen name="slidingPanel_textSize">16dp</dimen>
+    <dimen name="slidingPanel_component_margin_top">23dp</dimen>
+
+    -->
+
+    <!-- For Unit Dialog -->
+<!--    <dimen name="UnitDialog_HeaderHeight">112dp</dimen>-->
+
+    <dimen name="UnitDialog_DialogMinMaxHeight">397dp</dimen>
+
+    <!-- Ratio: 2:3 -->
+    <dimen name="UnitDialog_HeaderHeight">112dp</dimen>
+
+</resources>
