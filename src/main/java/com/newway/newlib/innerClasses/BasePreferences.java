@@ -17,7 +17,8 @@ public class BasePreferences {
     public BasePreferences(Context context, String fontAssetLocation) {
         if (!mIsInitialized) {
             mSPrefs = context.getSharedPreferences(context.getPackageName(), Context.MODE_PRIVATE);
-            mPersianTypeFace = Typeface.createFromAsset(context.getAssets(), fontAssetLocation);
+            if(fontAssetLocation != null)
+                mPersianTypeFace = Typeface.createFromAsset(context.getAssets(), fontAssetLocation);
             mIsInitialized = true;
         }
     }
