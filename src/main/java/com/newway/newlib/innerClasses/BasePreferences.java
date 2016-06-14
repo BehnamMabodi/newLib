@@ -3,13 +3,14 @@ package com.newway.newlib.innerClasses;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
+import android.util.Log;
 
 import java.util.Locale;
 
 /**
  * Created by Gold Phoenix on 06/13/2016.
  */
-public abstract class BasePreferences {
+public class BasePreferences {
 
     protected static boolean mIsInitialized;
     protected static SharedPreferences mSPrefs;
@@ -18,13 +19,10 @@ public abstract class BasePreferences {
     protected static Typeface mTypeFaceMediumEnglish;
     protected static Typeface mTypeFaceRegularEnglish;
 
-
-    public static int TYPEFACE_AUTOMATIC = 0;
-    public static int TYPEFACE_ROBOTO = 10;
-    public static int TYPEFACE_PERSIAN = 20;
-    public static int TYPEFACE_REGULAR = 0;
-    public static int TYPEFACE_MEDIUM = 10;
-    public static int TYPEFACE_BOLD = 20;
+    public static int TYPEFACE_PERSIAN = 10;
+    public static int TYPEFACE_REGULAR = 10;
+    public static int TYPEFACE_MEDIUM = 20;
+    public static int TYPEFACE_BOLD = 30;
 
 
 
@@ -45,12 +43,8 @@ public abstract class BasePreferences {
     public Typeface getTypeface(int typeFacesize) {
         if (isForcedPersian() || Locale.getDefault().getDisplayLanguage().equals("فارسی"))
             return mTypeFaceMediumPersian;
-        else {
-            if (typeFacesize == TYPEFACE_REGULAR)
-                return mTypeFaceRegularEnglish;
-            else
-                return mTypeFaceMediumEnglish;
-        }
+        else
+            return mTypeFaceMediumEnglish;
     }
 
     public Typeface getTypeface(int typeFaceLangID, int typeFacesize) {
