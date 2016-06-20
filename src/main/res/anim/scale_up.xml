@@ -8,8 +8,8 @@
         android:fromYScale="0.7"
         android:toXScale="1"
         android:toYScale="1"
-        android:pivotX="155"
-        android:pivotY="127"/>
+        android:pivotX="@dimen/UnitDialog_DialogCenterX"
+        android:pivotY="@dimen/UnitDialog_DialogCenterX"/>
     <alpha
         android:fromAlpha="0"
         android:toAlpha="1" />

@@ -25,6 +25,7 @@
 <!--    <dimen name="UnitDialog_HeaderHeight">112dp</dimen>-->
 
     <dimen name="UnitDialog_DialogMinMaxHeight">397dp</dimen>
+    <dimen name="UnitDialog_DialogCenterY">198dp</dimen>
 
     <!-- Ratio: 2:3 -->
     <dimen name="UnitDialog_HeaderHeight">112dp</dimen>
