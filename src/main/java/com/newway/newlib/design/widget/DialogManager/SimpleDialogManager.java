@@ -89,6 +89,7 @@ public class SimpleDialogManager extends DialogManager {
             mInflater = LayoutInflater.from(mContext);
         if (mAlertDialog == null) {
             mAlertDialog = new AlertDialog.Builder(mContext).create();
+            mAlertDialog.getWindow().setWindowAnimations(R.style.DialogAnimation);
             mAlertDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
                 @Override
                 public void onDismiss(DialogInterface dialogInterface) {
