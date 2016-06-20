@@ -85,8 +85,6 @@
 
     <dimen name="UnitDialog_DialogMinMaxWidth">254dp</dimen>
     <dimen name="UnitDialog_DialogMinMaxHeight">310dp</dimen>
-    <dimen name="UnitDialog_DialogCenterY">155dp</dimen>
-    <dimen name="UnitDialog_DialogCenterX">127dp</dimen>
 
     <dimen name="UnitDialog_LevelButtonPadding">4dp</dimen>
     <dimen name="UnitDialog_LevelButtonIncreasedWidth">222dp</dimen>

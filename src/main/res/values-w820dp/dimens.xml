@@ -8,7 +8,6 @@
 
     <!-- For Unit Dialog -->
     <dimen name="UnitDialog_DialogMinMaxWidth">414dp</dimen>
-    <dimen name="UnitDialog_DialogCenterX">207dp</dimen>
 <!--
     <dimen name="UnitDialog_DialogMinMaxWidth">448dp</dimen>
 -->
