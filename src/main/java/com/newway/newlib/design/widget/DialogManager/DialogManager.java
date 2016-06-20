@@ -83,6 +83,6 @@ public abstract class DialogManager {
         view.setScaleY(0.2f);
         view.setAlpha(0f);
 
-        view.animate().scaleX(1f).scaleY(1f).setDuration(400).alpha(1f).setInterpolator(new FastOutSlowInInterpolator()).start();
+        view.animate().scaleX(1f).scaleY(1f).setDuration(250).setStartDelay(150).alpha(1f).setInterpolator(new FastOutSlowInInterpolator()).start();
     }
 }
