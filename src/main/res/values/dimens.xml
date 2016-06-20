@@ -47,7 +47,7 @@
     <dimen name="slidingPanel_width">@dimen/match_parent</dimen>
     <dimen name="slidingPanel_textSize">14dp</dimen>
     <dimen name="slidingPanel_component_padding_drawable">4dp</dimen>
-    <dimen name="slidingPanel_component_margin_top">19dp</dimen>
+    <dimen name="slidingPanel_component_margin_top">17dp</dimen>
     <dimen name="slidingPanel_component_margin_h_master">8dp</dimen>
     <dimen name="slidingPanel_component_margin_h">8dp</dimen>
 
@@ -85,11 +85,13 @@
 
     <dimen name="UnitDialog_DialogMinMaxWidth">254dp</dimen>
     <dimen name="UnitDialog_DialogMinMaxHeight">310dp</dimen>
+    <dimen name="UnitDialog_DialogCenterY">155dp</dimen>
+    <dimen name="UnitDialog_DialogCenterX">127dp</dimen>
 
     <dimen name="UnitDialog_LevelButtonPadding">4dp</dimen>
     <dimen name="UnitDialog_LevelButtonIncreasedWidth">222dp</dimen>
     <dimen name="UnitDialog_LevelButtonSelectorTextSize">14sp</dimen>
-
+    <dimen name="UnitDialog_AnimationInterpolator">@android:interpolator/accelerate_decelerate</dimen>
 
 
     <!-- Ratio: 2:3 -->

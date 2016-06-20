@@ -3,7 +3,6 @@ package com.newway.newlib.innerClasses;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
-import android.util.Log;
 
 import java.util.Locale;
 
@@ -25,7 +24,6 @@ public class BasePreferences {
     public static int TYPEFACE_BOLD = 30;
 
 
-
     public BasePreferences(Context context, String fontAssetLocationPersian) {
         if (!mIsInitialized) {
             mSPrefs = context.getSharedPreferences(context.getPackageName(), Context.MODE_PRIVATE);
@@ -43,15 +41,19 @@ public class BasePreferences {
     public Typeface getTypeface(int typeFacesize) {
         if (isForcedPersian() || Locale.getDefault().getDisplayLanguage().equals("فارسی"))
             return mTypeFaceMediumPersian;
-        else
-            return mTypeFaceMediumEnglish;
+        else {
+            if (typeFacesize == TYPEFACE_REGULAR)
+                return mTypeFaceRegularEnglish;
+            else
+                return mTypeFaceMediumEnglish;
+        }
     }
 
     public Typeface getTypeface(int typeFaceLangID, int typeFacesize) {
         if (typeFaceLangID == TYPEFACE_PERSIAN)
             return mTypeFaceMediumPersian;
         else {
-            if(typeFacesize == TYPEFACE_REGULAR)
+            if (typeFacesize == TYPEFACE_REGULAR)
                 return mTypeFaceRegularEnglish;
             else
                 return mTypeFaceMediumEnglish;
