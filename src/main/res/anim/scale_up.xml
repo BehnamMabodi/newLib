@@ -2,10 +2,10 @@
 <set xmlns:android="http://schemas.android.com/apk/res/android"
     android:shareInterpolator="true"
     android:interpolator="@dimen/UnitDialog_AnimationInterpolator"
-    android:duration="300">
+    android:duration="200">
     <scale
-        android:fromXScale="0"
-        android:fromYScale="0"
+        android:fromXScale="0.7"
+        android:fromYScale="0.7"
         android:toXScale="1"
         android:toYScale="1"
         android:pivotX="155"
