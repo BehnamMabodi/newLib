@@ -24,7 +24,7 @@ public abstract class MyTools {
 
             int[] intArray = new int[mStringArray.length];
             for (int i = 0; i < mStringArray.length; i++) {
-                intArray[i] = Integer.parseInt(mStringArray[i].toString().trim());
+                intArray[i] = Integer.parseInt(mStringArray[i].trim());
             }
             return intArray;
         }
@@ -150,7 +150,7 @@ public abstract class MyTools {
          *
          * @param context
          */
-        public static void sendCommentBazaar(Context context) {
+        public static void sendCommentBazaar(Context context) throws Exception {
             Intent intent = new Intent(Intent.ACTION_EDIT);
             intent.setData(Uri.parse("bazaar://details?id=" + context.getPackageName()));
             intent.setPackage("com.farsitel.bazaar");
