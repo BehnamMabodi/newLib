@@ -63,4 +63,12 @@ public class BasePreferences {
     public boolean isForcedPersian() {
         return mForcePersian;
     }
+
+    public boolean isFirstUse(String uniqueID) {
+        return mSPrefs.getBoolean("IS_FIRST_USE" + uniqueID, true);
+    }
+
+    public void setFirstUse(String uniqueID, boolean firstUse) {
+        mSPrefs.edit().putBoolean("IS_FIRST_USE" + uniqueID, firstUse).apply();
+    }
 }
