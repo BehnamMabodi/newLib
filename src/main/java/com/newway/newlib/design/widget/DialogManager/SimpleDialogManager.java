@@ -15,7 +15,7 @@ import com.newway.newlib.R;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.newway.newlib.innerClasses.MyAnimationUtils.enterReveal;
+import static com.newway.newlib.innerClasses.Tools.MyAnimationUtils.enterReveal;
 
 /**
  * Created by Golden Phoenix on 02/04/2016.
