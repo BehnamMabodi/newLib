@@ -32,7 +32,7 @@ public class SimpleDialogManager extends DialogManager {
 
 
     private List<OnClickListener> mOnClickListener;
-    private String mTexttitle;
+    private String mTextTitle;
     private String mTextOk;
     private String mTextCancel;
     private String mTextContent;
@@ -61,7 +61,7 @@ public class SimpleDialogManager extends DialogManager {
     protected void initVars(Context context, String title, String buttonOK_Text, String buttonCancel_Text, String content) {
         mContext = context;
         mOnClickListener = new ArrayList<>();
-        mTexttitle = title;
+        mTextTitle = title;
         mTextOk = buttonOK_Text;
         mTextCancel = buttonCancel_Text;
         mTextContent = content;
@@ -133,7 +133,7 @@ public class SimpleDialogManager extends DialogManager {
         mLayoutContent = (ViewGroup) mLayoutMain.findViewById(R.id.Dialog_ContentLayout);
 
 
-        mLayoutTitle.setText(mTexttitle);
+        mLayoutTitle.setText(mTextTitle);
         mLayoutButtonOK.setText(mTextOk);
         mLayoutButtonCancel.setText(mTextCancel);
         mLayoutContentTextView.setText(mTextContent);
@@ -164,8 +164,8 @@ public class SimpleDialogManager extends DialogManager {
     }
 
     public void setTitleText(String title) {
-        mTexttitle = title;
-        mLayoutTitle.setText(mTexttitle);
+        mTextTitle = title;
+        mLayoutTitle.setText(mTextTitle);
     }
 
     public void addOnClickListenerListener(OnClickListener listener) {
