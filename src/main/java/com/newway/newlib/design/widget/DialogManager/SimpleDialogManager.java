@@ -2,18 +2,20 @@ package com.newway.newlib.design.widget.DialogManager;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.os.Handler;
 import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.newway.newlib.R;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.newway.newlib.innerClasses.MyAnimationUtils.enterReveal;
 
 /**
  * Created by Golden Phoenix on 02/04/2016.
@@ -38,11 +40,11 @@ public class SimpleDialogManager extends DialogManager {
 
     private TextView mLayoutContentTextView;
 
-//TODO: Apply Material Theme and properties Automatically
+    //TODO: Apply Material Theme and properties Automatically
     public interface OnClickListener {
-        void onOK(View DialogView , String id);
+        void onOK(View DialogView, String id);
 
-        void onCancel(View DialogView , String id);
+        void onCancel(View DialogView, String id);
     }
 
 
@@ -70,13 +72,19 @@ public class SimpleDialogManager extends DialogManager {
     public void showDialog() {
         initViews();
         super.showDialog();
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                enterReveal(mAlertDialog.getWindow().getDecorView(), 400, 0);
+            }
+        }, 10);
     }
 
     @Override
     public void setView(View view, String id) {
         setDialogID(id);
         initViews();
-        if (view != null && mLayoutContent != view) {
+        if (view != null && mLayoutContentView != view) {
             mLayoutContent.removeAllViews();
             mLayoutContent.addView(view);
             mLayoutContentView = view;
@@ -99,8 +107,6 @@ public class SimpleDialogManager extends DialogManager {
             setupDefaultView();
             setWidthAndHeight(DIALOG_WIDTH_DEFAULT, DIALOG_HEIGHT_DEFAULT);
         }
-
-
     }
 
     /**
@@ -168,11 +174,11 @@ public class SimpleDialogManager extends DialogManager {
 
     protected void onOK() {
         for (OnClickListener listener : mOnClickListener)
-            listener.onOK(mLayoutContentView , mDialogID);
+            listener.onOK(mLayoutContentView, mDialogID);
     }
 
     protected void onCancel() {
         for (OnClickListener listener : mOnClickListener)
-            listener.onCancel(mLayoutContentView , mDialogID);
+            listener.onCancel(mLayoutContentView, mDialogID);
     }
 }
