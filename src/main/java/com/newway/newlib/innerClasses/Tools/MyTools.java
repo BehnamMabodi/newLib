@@ -1,4 +1,4 @@
-package com.newway.newlib.innerClasses;
+package com.newway.newlib.innerClasses.Tools;
 
 
 import android.app.Activity;
