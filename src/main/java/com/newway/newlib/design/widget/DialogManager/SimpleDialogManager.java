@@ -2,6 +2,7 @@ package com.newway.newlib.design.widget.DialogManager;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.os.Build;
 import android.os.Handler;
 import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
@@ -72,12 +73,14 @@ public class SimpleDialogManager extends DialogManager {
     public void showDialog() {
         initViews();
         super.showDialog();
+        mAlertDialog.getWindow().getDecorView().setAlpha(0);
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                enterReveal(mAlertDialog.getWindow().getDecorView(), 400, 0);
+                mAlertDialog.getWindow().getDecorView().setAlpha(1);
+                enterReveal(mAlertDialog.getWindow().getDecorView(), 300, 0);
             }
-        }, 10);
+        }, 20);
     }
 
     @Override
@@ -97,7 +100,10 @@ public class SimpleDialogManager extends DialogManager {
             mInflater = LayoutInflater.from(mContext);
         if (mAlertDialog == null) {
             mAlertDialog = new AlertDialog.Builder(mContext).create();
-            mAlertDialog.getWindow().setWindowAnimations(R.style.DialogAnimation);
+            if(Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP)
+                mAlertDialog.getWindow().setWindowAnimations(R.style.DialogAnimation);
+            else
+                mAlertDialog.getWindow().setWindowAnimations(R.style.DialogNonAnimation);
             mAlertDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
                 @Override
                 public void onDismiss(DialogInterface dialogInterface) {
