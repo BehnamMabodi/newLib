@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="UnitDialog_AnimationInterpolator">@android:interpolator/fast_out_slow_in</dimen>
+<!--    <item name="UnitDialog_Alpha_Full" format="integer" type="dimen">1</item>
+    <item name="UnitDialog_Alpha_Zero" format="integer" type="dimen">1</item>-->
+
 </resources>

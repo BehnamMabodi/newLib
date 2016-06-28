@@ -40,8 +40,6 @@
     <dimen name="ListViewTopMargin">0dp</dimen>
 
 
-
-
     <!-- For Sliding Up Panel-->
     <dimen name="SlidingUpPanel_ClosedSize">56dp</dimen>
     <dimen name="slidingPanel_width">@dimen/match_parent</dimen>
@@ -55,27 +53,28 @@
     <dimen name="slidingPanel_component_capacity_spell">80dp</dimen>
 
 
-
-
-
-
     <dimen name="match_parent">-1px</dimen>
     <dimen name="wrap_content">-2px</dimen>
 
 
-
     <dimen name="TextSizeDisplayLarge">34sp</dimen>
-    <dimen name="MaterialButton_TextSize">15sp</dimen> <!-- Title for persian: bold 15sp , english: medium 14sp -->
+    <dimen name="MaterialButton_TextSize">15sp
+    </dimen> <!-- Title for persian: bold 15sp , english: medium 14sp -->
 
 
-    <dimen name="TextSize_Title">21sp</dimen>  <!-- Title for persian: bold 21sp , english: medium 20sp -->
+    <dimen name="TextSize_Title">21sp
+    </dimen>  <!-- Title for persian: bold 21sp , english: medium 20sp -->
 
-    <dimen name="TextSize_Body1">15sp</dimen> <!-- Title for persian: Regular 15sp , english: Regular 14sp -->
+    <dimen name="TextSize_Body1">15sp
+    </dimen> <!-- Title for persian: Regular 15sp , english: Regular 14sp -->
 
-    <dimen name="TextSize_SubHeading">17sp</dimen> <!-- for persian: 17sp Regular  , english: 16sp  all regular -->
+    <dimen name="TextSize_SubHeading">17sp
+    </dimen> <!-- for persian: 17sp Regular  , english: 16sp  all regular -->
 
-    <dimen name="TextSize_PrimaryTitle">@dimen/TextSize_SubHeading</dimen> <!-- FromDoc This Should Be: Subheading-->
-    <dimen name="TextSize_PrimarySubTitle">@dimen/TextSize_Body1</dimen> <!-- FromDoc This Should Be: Body1 Regular-->
+    <dimen name="TextSize_PrimaryTitle">@dimen/TextSize_SubHeading
+    </dimen> <!-- FromDoc This Should Be: Subheading-->
+    <dimen name="TextSize_PrimarySubTitle">@dimen/TextSize_Body1
+    </dimen> <!-- FromDoc This Should Be: Body1 Regular-->
 
 
     <dimen name="MaterialButton_Title">14sp</dimen>
@@ -94,8 +93,6 @@
 
     <!-- Ratio: 2:3 -->
     <dimen name="UnitDialog_HeaderHeight">56dp</dimen>
-
-
 
 
     <!-- //////////////////////// -->
@@ -136,7 +133,8 @@
 
     <!-- Default padding for list items. This should match the action bar
          content inset so that ListActivity items line up correctly. -->
-    <dimen name="list_item_padding_horizontal_material">@dimen/action_bar_content_inset_material</dimen>
+    <dimen name="list_item_padding_horizontal_material">@dimen/action_bar_content_inset_material
+    </dimen>
 
     <!-- Padding to add to the start of the overflow action button. -->
     <dimen name="action_bar_navigation_padding_start_material">0dp</dimen>
@@ -202,8 +200,6 @@
 
     <!-- Padding above and below selection dialog lists. -->
     <dimen name="dialog_list_padding_vertical_material">8dp</dimen>
-
-
 
 
     <!-- MULTI WINDOW Sizes -->
