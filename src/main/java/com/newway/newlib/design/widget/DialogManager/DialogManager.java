@@ -1,12 +1,8 @@
 package com.newway.newlib.design.widget.DialogManager;
 
 import android.content.Context;
-import android.support.v4.view.animation.FastOutSlowInInterpolator;
-import android.support.v4.view.animation.LinearOutSlowInInterpolator;
 import android.support.v7.app.AlertDialog;
 import android.view.View;
-import android.view.Window;
-import android.view.animation.AccelerateInterpolator;
 
 import com.newway.newlib.R;
 
@@ -62,9 +58,6 @@ public abstract class DialogManager {
         mDialogWidth = width;
         mDialogHeight = height;
         mAlertDialog.getWindow().setLayout(width, height);
-
-
-
     }
 
     /**
@@ -78,11 +71,5 @@ public abstract class DialogManager {
 
     public void showDialog() {
         mAlertDialog.show();
-        View view = mAlertDialog.getWindow().getDecorView();
-        view.setScaleX(0.2f);
-        view.setScaleY(0.2f);
-        view.setAlpha(0f);
-
-        view.animate().scaleX(1f).scaleY(1f).setDuration(250).setStartDelay(150).alpha(1f).setInterpolator(new FastOutSlowInInterpolator()).start();
     }
 }
