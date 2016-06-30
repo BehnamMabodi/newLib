@@ -31,10 +31,14 @@ public class RepeatListener implements OnTouchListener {
     private Runnable handlerRunnable = new Runnable() {
         @Override
         public void run() {
-            handler.postDelayed(this, normalInterval);
-            longClickListener.onLongClick(downView);
-            hasStartedRepeating = true;
-            decreaseIntervalTime();
+            try {
+                handler.postDelayed(this, normalInterval);
+                longClickListener.onLongClick(downView);
+                hasStartedRepeating = true;
+                decreaseIntervalTime();
+            } catch (Exception e) {
+
+            }
         }
     };
 
@@ -73,12 +77,15 @@ public class RepeatListener implements OnTouchListener {
     }
 
     private boolean actionDown(View view) {
-        handler.removeCallbacks(handlerRunnable);
-        handler.postDelayed(handlerRunnable, initialInterval);
-        downView = view;
-        downView.setPressed(true);
-
-        return true;
+        try {
+            handler.removeCallbacks(handlerRunnable);
+            handler.postDelayed(handlerRunnable, initialInterval);
+            downView = view;
+            downView.setPressed(true);
+        }
+        finally {
+            return true;
+        }
     }
 
 
@@ -89,19 +96,24 @@ public class RepeatListener implements OnTouchListener {
     }
 
     private boolean actionCancel() {
-        handler.removeCallbacks(handlerRunnable);
-        downView.setPressed(false);
-        downView = null;
-        hasStartedRepeating = false;
-        resetIntervalTime();
-        return true;
+        try {
+            handler.removeCallbacks(handlerRunnable);
+            downView.setPressed(false);
+            downView = null;
+            hasStartedRepeating = false;
+        }
+        finally {
+            resetIntervalTime();
+            return true;
+        }
     }
 
-    private void decreaseIntervalTime(){
-        if(normalInterval > 40)
+    private void decreaseIntervalTime() {
+        if (normalInterval > 40)
             normalInterval -= 8;
     }
-    private void resetIntervalTime(){
+
+    private void resetIntervalTime() {
         normalInterval = defaultNormalInterval;
     }
 
