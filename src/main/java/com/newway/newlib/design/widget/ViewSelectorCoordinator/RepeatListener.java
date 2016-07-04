@@ -8,8 +8,8 @@ import android.view.View.OnTouchListener;
 /**
  * A class, that can be used as a TouchListener on any view (e.g. a Button).
  * It cyclically runs a clickListener, emulating keyboard-like behaviour. First
- * click is fired immediately, next one after the initialInterval, and subsequent
- * ones after the normalInterval.
+ * click is fired immediately, next one after the mInitialInterval, and subsequent
+ * ones after the mNormalInterval.
  * <p/>
  * <p>Interval is scheduled after the onClick completes, so it has to run fast.
  * If it runs slow, it does not generate skipped onClicks. Can be rewritten to
@@ -19,9 +19,16 @@ public class RepeatListener implements OnTouchListener {
 
     private static Handler handler = new Handler();
 
-    private int initialInterval;
-    private int normalInterval;
-    private int defaultNormalInterval;
+    private static int MODE_MULTICLICK = 10;
+    private static int MODE_TIME_INTERPOLATOR = 20;
+    private int mClickMod;
+    private int mStepsIncreaseRate;
+    private int mDefaultNormalInterval;
+    private int mInitialInterval;
+    private int mNormalInterval;
+    private int mDefaultSteps = 1;
+    private int mSteps = mDefaultSteps;
+    private int mRepeatCount;
     private View.OnLongClickListener longClickListener;
 
     private View downView;
@@ -32,10 +39,12 @@ public class RepeatListener implements OnTouchListener {
         @Override
         public void run() {
             try {
-                handler.postDelayed(this, normalInterval);
-                longClickListener.onLongClick(downView);
+                handler.postDelayed(this, mNormalInterval);
+                for (int i = 0; i < mSteps; i++)
+                    longClickListener.onLongClick(downView);
                 hasStartedRepeating = true;
                 decreaseIntervalTime();
+                increaseSteps();
             } catch (Exception e) {
 
             }
@@ -56,12 +65,30 @@ public class RepeatListener implements OnTouchListener {
         if (initialInterval < 0 || normalInterval < 0)
             throw new IllegalArgumentException("negative interval");
 
-        this.initialInterval = initialInterval;
-        this.normalInterval = normalInterval;
+        this.mInitialInterval = initialInterval;
+        this.mNormalInterval = normalInterval;
         this.longClickListener = longClickListener;
-        defaultNormalInterval = normalInterval;
+        this.mDefaultNormalInterval = normalInterval;
+        this.mClickMod = MODE_TIME_INTERPOLATOR;
 
     }
+
+    public RepeatListener(int initialInterval, int normalInterval, int stepsIncreaseRate,
+                          View.OnLongClickListener longClickListener) {
+        if (longClickListener == null)
+            throw new IllegalArgumentException("null runnable");
+        if (initialInterval < 0 || normalInterval < 0)
+            throw new IllegalArgumentException("negative interval");
+
+        this.mInitialInterval = initialInterval;
+        this.mNormalInterval = normalInterval;
+        this.longClickListener = longClickListener;
+        this.mDefaultNormalInterval = normalInterval;
+        this.mStepsIncreaseRate = stepsIncreaseRate;
+        this.mClickMod = MODE_MULTICLICK;
+
+    }
+
 
     public boolean onTouch(View view, MotionEvent motionEvent) {
         switch (motionEvent.getAction()) {
@@ -79,11 +106,10 @@ public class RepeatListener implements OnTouchListener {
     private boolean actionDown(View view) {
         try {
             handler.removeCallbacks(handlerRunnable);
-            handler.postDelayed(handlerRunnable, initialInterval);
+            handler.postDelayed(handlerRunnable, mInitialInterval);
             downView = view;
             downView.setPressed(true);
-        }
-        finally {
+        } finally {
             return true;
         }
     }
@@ -101,20 +127,39 @@ public class RepeatListener implements OnTouchListener {
             downView.setPressed(false);
             downView = null;
             hasStartedRepeating = false;
-        }
-        finally {
+        } finally {
             resetIntervalTime();
+            resetSteps();
             return true;
         }
     }
 
+    private void increaseSteps() {
+        if (mClickMod == MODE_MULTICLICK) {
+            if (mRepeatCount > 8)
+                mSteps = 2 * mStepsIncreaseRate;
+            if (mRepeatCount > 10)
+                mSteps = 3 * mStepsIncreaseRate;
+            if (mRepeatCount > 13)
+                mSteps = 4 * mStepsIncreaseRate;
+            if (mRepeatCount > 15)
+                mSteps = 5 * mStepsIncreaseRate;
+
+            mRepeatCount++;
+        }
+    }
+
+    private void resetSteps() {
+        mSteps = mDefaultSteps;
+        mRepeatCount = 0;
+    }
+
     private void decreaseIntervalTime() {
-        if (normalInterval > 40)
-            normalInterval -= 8;
+        if (mClickMod == MODE_TIME_INTERPOLATOR && mNormalInterval > 40)
+            mNormalInterval -= 8;
     }
 
     private void resetIntervalTime() {
-        normalInterval = defaultNormalInterval;
+        mNormalInterval = mDefaultNormalInterval;
     }
-
 }
