@@ -1,7 +1,10 @@
 package com.newway.newlib.innerClasses.Tools;
 
 import android.animation.Animator;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.RippleDrawable;
 import android.os.Build;
+import android.os.Handler;
 import android.support.v4.view.animation.FastOutSlowInInterpolator;
 import android.view.View;
 import android.view.ViewAnimationUtils;
@@ -42,4 +45,26 @@ public abstract class MyAnimationUtils {
         } else
             view.setVisibility(View.VISIBLE);
     }
+
+    public static void forceRippleAnimation(View view, Float cX, Float cY) {
+        Drawable background = view.getBackground();
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP && background instanceof RippleDrawable) {
+            final RippleDrawable rippleDrawable = (RippleDrawable) background;
+
+            rippleDrawable.setState(new int[]{android.R.attr.state_pressed, android.R.attr.state_enabled});
+            if (cX != null && cY != null)
+                rippleDrawable.setHotspot(cX, cY);
+
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    rippleDrawable.setState(new int[]{});
+                }
+            }, 200);
+        }
+    }
+
+
 }
