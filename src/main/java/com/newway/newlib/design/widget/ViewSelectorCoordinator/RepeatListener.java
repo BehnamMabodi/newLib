@@ -1,5 +1,6 @@
 package com.newway.newlib.design.widget.ViewSelectorCoordinator;
 
+import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
@@ -42,14 +43,34 @@ public class RepeatListener implements OnTouchListener {
                 handler.postDelayed(this, mNormalInterval);
                 for (int i = 0; i < mSteps; i++)
                     longClickListener.onLongClick(downView);
+                flashRipple();
                 hasStartedRepeating = true;
                 decreaseIntervalTime();
                 increaseSteps();
             } catch (Exception e) {
-
             }
         }
     };
+
+    private void flashRipple() {
+        Drawable drawable = downView.getBackground();
+        if (isPressed(downView)) {
+            if (downView.isEnabled())
+                drawable.setState(new int[]{android.R.attr.state_enabled});
+            else
+                drawable.setState(new int[]{});
+        } else
+            drawable.setState(new int[]{android.R.attr.state_pressed, android.R.attr.state_enabled});
+    }
+
+    private boolean isPressed(View view) {
+        Drawable drawable = view.getBackground();
+        int[] stateList = drawable.getState();
+        for (int aStateList : stateList)
+            if (aStateList == android.R.attr.state_pressed)
+                return true;
+        return false;
+    }
 
     /**
      * @param initialInterval   The interval after first click event
@@ -73,6 +94,14 @@ public class RepeatListener implements OnTouchListener {
 
     }
 
+    /**
+     * @param initialInterval   The interval after first click event
+     * @param normalInterval    The interval after second and subsequent click
+     *                          events
+     * @param longClickListener The OnClickListener, that will be called
+     *                          periodically
+     * @param stepsIncreaseRate Increase rate for each steps
+     */
     public RepeatListener(int initialInterval, int normalInterval, int stepsIncreaseRate,
                           View.OnLongClickListener longClickListener) {
         if (longClickListener == null)
