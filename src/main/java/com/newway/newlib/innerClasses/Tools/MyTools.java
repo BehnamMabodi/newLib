@@ -138,6 +138,24 @@ public abstract class MyTools {
             //Megabytes
             return (int) maxMemory;
         }*/
+
+
+        /**
+         * Create an intent for sending email.
+         * Use startActivity(Intent.createChooser(emailIntent, "Send email...")); to start intent
+         *
+         * @param body            Email body
+         * @param subject         Email Subject
+         * @param receiverAddress Email Receiver Address
+         * @return emailIntent
+         */
+        public static Intent sendMail(String receiverAddress, String subject, String body) {
+            Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto", receiverAddress, null));
+            emailIntent.putExtra(Intent.EXTRA_SUBJECT, subject);
+            emailIntent.putExtra(Intent.EXTRA_TEXT, body);
+            return emailIntent;
+
+        }
     }
 
     public static abstract class MarketTools {
