@@ -78,7 +78,7 @@ public class SimpleDialogManager extends DialogManager {
             @Override
             public void run() {
                 mAlertDialog.getWindow().getDecorView().setAlpha(1);
-                enterReveal(mAlertDialog.getWindow().getDecorView(), 300, 0);
+                enterReveal(mAlertDialog.getWindow().getDecorView(), 300, 0 , null , null);
             }
         }, 20);
     }
