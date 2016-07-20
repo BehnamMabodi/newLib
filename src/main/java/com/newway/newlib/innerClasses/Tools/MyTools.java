@@ -159,7 +159,7 @@ public abstract class MyTools {
     }
 
     public static abstract class MarketTools {
-        public static void goToMarketPage(Context context) {
+        public static void goToMarketPageInternational(Context context) {
             context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + context.getPackageName())));
         }
 
@@ -175,13 +175,34 @@ public abstract class MyTools {
             context.startActivity(intent);
         }
 
-        public static void sendCommentInternational(Context context) {
+        public static void sendComment(Context context) {
             try {
                 sendCommentBazaar(context);
             } catch (Exception e) {
-                goToMarketPage(context);
+                goToMarketPageInternational(context);
             }
         }
+
+        public static void goToMarketDeveloperPageInternational(Context context, int InternationalDevID) {
+            //TODO: this is inaccurate
+            context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://play.google.com/store/apps/developer?id=NeWWaY")));
+        }
+
+        public static void goToMarketDeveloperPageBazaar(Context context, int BazaarDevID) {
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setData(Uri.parse("bazaar://collection?slug=by_author&aid=" + BazaarDevID));
+            intent.setPackage("com.farsitel.bazaar");
+            context.startActivity(intent);
+        }
+
+        public static void goToMarketDeveloperPage(Context context, int internationalDevID, int BazaarDevID) {
+            try {
+                goToMarketDeveloperPageBazaar(context, BazaarDevID);
+            } catch (Exception e) {
+                goToMarketDeveloperPageInternational(context, internationalDevID);
+            }
+        }
+
     }
 
 /*    public static abstract class MyAnimationBuilder {
