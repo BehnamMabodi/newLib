@@ -38,11 +38,11 @@ public class BasePreferences {
         }
     }
 
-    public Typeface getTypeface(int typeFacesize) {
+    public Typeface getTypeface(int typeFaceSize) {
         if (isForcedPersian() || Locale.getDefault().getDisplayLanguage().equals("فارسی"))
             return mTypeFaceMediumPersian;
         else {
-            if (typeFacesize == TYPEFACE_REGULAR)
+            if (typeFaceSize == TYPEFACE_REGULAR)
                 return mTypeFaceRegularEnglish;
             else
                 return mTypeFaceMediumEnglish;
