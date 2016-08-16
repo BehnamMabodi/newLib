@@ -71,4 +71,29 @@ public class BasePreferences {
     public void setFirstUse(String uniqueID, boolean firstUse) {
         mSPrefs.edit().putBoolean("IS_FIRST_USE" + uniqueID, firstUse).apply();
     }
+
+    public void putInt(String name, int value) {
+        mSPrefs.edit().putInt(name, value).apply();
+    }
+
+    public int getInt(String name, int defaultValue) {
+        return mSPrefs.getInt(name, defaultValue);
+    }
+
+    public void putString(String name, String value) {
+        mSPrefs.edit().putString(name, value).apply();
+    }
+
+    public String getString(String name, String defaultValue) {
+        return mSPrefs.getString(name, defaultValue);
+    }
+
+    public void putBoolean(String name, boolean value) {
+        mSPrefs.edit().putBoolean(name, value).apply();
+    }
+
+    public boolean getBoolean(String name, boolean defaultValue) {
+        return mSPrefs.getBoolean(name, defaultValue);
+    }
+
 }
