@@ -24,7 +24,7 @@ public class BasePreferences {
     public static int TYPEFACE_BOLD = 30;
 
 
-    public BasePreferences(Context context, String fontAssetLocationPersian) {
+    protected BasePreferences(Context context, String fontAssetLocationPersian) {
         if (!mIsInitialized) {
             mSPrefs = context.getSharedPreferences(context.getPackageName(), Context.MODE_PRIVATE);
 
