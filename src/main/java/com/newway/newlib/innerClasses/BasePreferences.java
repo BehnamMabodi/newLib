@@ -26,12 +26,13 @@ public class BasePreferences {
 
     protected BasePreferences(Context context, String fontAssetLocationPersian) {
         if (!mIsInitialized) {
-            mSPrefs = context.getSharedPreferences(context.getPackageName(), Context.MODE_PRIVATE);
+            Context applicationContext = context.getApplicationContext();
+            mSPrefs = applicationContext.getSharedPreferences(applicationContext.getPackageName(), Context.MODE_PRIVATE);
 
             if (fontAssetLocationPersian != null)
-                mTypeFaceMediumPersian = Typeface.createFromAsset(context.getAssets(), fontAssetLocationPersian);
-            mTypeFaceMediumEnglish = Typeface.createFromAsset(context.getAssets(), "fonts/Roboto-Medium.ttf");
-            mTypeFaceRegularEnglish = Typeface.createFromAsset(context.getAssets(), "fonts/Roboto-Regular.ttf");
+                mTypeFaceMediumPersian = Typeface.createFromAsset(applicationContext.getAssets(), fontAssetLocationPersian);
+            mTypeFaceMediumEnglish = Typeface.createFromAsset(applicationContext.getAssets(), "fonts/Roboto-Medium.ttf");
+            mTypeFaceRegularEnglish = Typeface.createFromAsset(applicationContext.getAssets(), "fonts/Roboto-Regular.ttf");
 
             //        Log.d("Display LANG", Locale.getDefault().getDisplayLanguage());
             mIsInitialized = true;
