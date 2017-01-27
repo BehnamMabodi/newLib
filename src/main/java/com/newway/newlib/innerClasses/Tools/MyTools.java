@@ -37,6 +37,10 @@ public abstract class MyTools {
             }
             return length;
         }
+
+        public static float dpToPx(float dp) {
+            return SystemTools.dpToPx(dp);
+        }
     }
 
 
