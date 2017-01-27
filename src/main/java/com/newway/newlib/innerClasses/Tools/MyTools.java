@@ -41,6 +41,10 @@ public abstract class MyTools {
         public static float dpToPx(float dp) {
             return SystemTools.dpToPx(dp);
         }
+
+        public static float pxToDp(float px) {
+            return SystemTools.pxToDp(px);
+        }
     }
 
 
