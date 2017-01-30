@@ -7,7 +7,6 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -52,20 +51,5 @@ public class FragmentComplex extends Fragment {
         mDrawerLayout.addDrawerListener(toggle);
         super.onViewCreated(view, savedInstanceState);
         toggle.syncState();
-        Log.d("Ejra shod" , "true");
-    }
-
-    public void syncDrawerAndToolbar(int toolbarId, DrawerLayout drawerLayout, int openDrawerString, int closeDrawerString) {
-        /*mActivity = (AppCompatActivity) getActivity();
-        mDrawerLayout = drawerLayout;
-        mToolbarId = toolbarId;
-        mOpenDrawerString = openDrawerString;
-        mCloseDrawerString = closeDrawerString;
-        mToolbar = (Toolbar) getView().findViewById(toolbarId);
-        mActivity.setSupportActionBar(mToolbar);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                mActivity, mDrawerLayout, mToolbar, mOpenDrawerString, mCloseDrawerString);
-        mDrawerLayout.addDrawerListener(toggle);
-        toggle.syncState();*/
     }
 }
