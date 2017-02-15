@@ -46,6 +46,11 @@ public abstract class MyTools {
             return SystemTools.pxToDp(px);
         }
 
+        public static float pxToSp(float px) {
+            float scaledDensity = Resources.getSystem().getDisplayMetrics().scaledDensity;
+            return px / scaledDensity;
+        }
+
         public static String NumberToPersian(String str) {
             char[] persianChars = {'۰', '١', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '٩'};
             StringBuilder builder = new StringBuilder();
