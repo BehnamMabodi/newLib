@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="DialogAnimation" >
+
+    <style name="DialogAnimation">
         <item name="android:windowEnterAnimation">@anim/scale_up</item>
         <item name="android:windowExitAnimation">@anim/scale_down</item>
     </style>
 
-    <style name="DialogNonAnimation" >
+    <style name="DialogNonAnimation">
         <item name="android:windowEnterAnimation">@anim/non_animation</item>
         <item name="android:windowExitAnimation">@anim/scale_down</item>
+    </style>
+
+
+    <style name="SubheadRTL" parent="@style/TextAppearance.AppCompat.Subhead">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="CaptionRTL" parent="@style/TextAppearance.AppCompat.Caption">
+        <item name="android:textSize">16sp</item>
     </style>
 </resources>
