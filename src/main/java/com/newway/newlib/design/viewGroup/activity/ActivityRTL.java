@@ -14,7 +14,7 @@ import java.util.List;
 
 public class ActivityRTL extends AppCompatActivity {
 
-    protected List<OnSavedInstanceBundleListener> mOnSavedInstanceBundleListeners;
+    private List<OnSavedInstanceBundleListener> mOnSavedInstanceBundleListeners;
 
     public interface OnSavedInstanceBundleListener {
         void onSavedInstanceBundle(Bundle bundle);
