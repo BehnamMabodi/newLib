@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="MyBaseTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:windowSharedElementEnterTransition">
+            @transition/activity_transition_normal
+        </item>
+        <item name="android:windowSharedElementExitTransition">
+            @transition/activity_transition_normal
+        </item>
+        <item name="android:windowSharedElementReenterTransition">
+            @transition/activity_transition_normal
+        </item>
+        <item name="android:windowSharedElementReturnTransition">
+            @transition/activity_transition_normal
+        </item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">?colorPrimaryDark</item>
+    </style>
+
+    <style name="DialogActivity" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowSharedElementEnterTransition">
+            @transition/activity_transition_normal
+        </item>
+        <item name="android:windowSharedElementExitTransition">
+            @transition/activity_transition_normal
+        </item>
+        <item name="android:windowSharedElementReenterTransition">
+            @transition/activity_transition_normal
+        </item>
+        <item name="android:windowSharedElementReturnTransition">
+            @transition/activity_transition_normal
+        </item>
+    </style>
+</resources>
