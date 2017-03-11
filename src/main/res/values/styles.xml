@@ -35,4 +35,13 @@
         <item name="android:windowContentOverlay">@null</item>
         <item name="android:backgroundDimEnabled">true</item>
     </style>
+
+    <style name="DialogActivity.ListItem">
+        <item name="android:minHeight">48dp</item>
+        <item name="android:paddingStart">20dp</item>
+        <item name="android:paddingRight">20dp</item>
+        <item name="android:textAppearance">@style/SubheadRTL</item>
+
+
+    </style>
 </resources>
