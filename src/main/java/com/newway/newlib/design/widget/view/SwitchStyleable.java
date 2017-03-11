@@ -1,7 +1,7 @@
 package com.newway.newlib.design.widget.view;
 
 import android.content.Context;
-import android.support.v7.widget.AppCompatTextView;
+import android.support.v7.widget.SwitchCompat;
 import android.text.SpannableString;
 import android.util.AttributeSet;
 import android.widget.TextView;
@@ -10,19 +10,18 @@ import android.widget.TextView;
  * Created by goldm on 16/02/2017.
  */
 
-public class TextViewMultiStyle extends AppCompatTextView {
-
-    public TextViewMultiStyle(Context context) {
+public class SwitchStyleable extends SwitchCompat {
+    public SwitchStyleable(Context context) {
         super(context);
         doOnCreate();
     }
 
-    public TextViewMultiStyle(Context context, AttributeSet attrs) {
+    public SwitchStyleable(Context context, AttributeSet attrs) {
         super(context, attrs);
         doOnCreate();
     }
 
-    public TextViewMultiStyle(Context context, AttributeSet attrs, int defStyleAttr) {
+    public SwitchStyleable(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         doOnCreate();
     }

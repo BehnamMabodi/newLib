@@ -10,18 +10,18 @@ import android.widget.TextView;
  * Created by goldm on 21/02/2017.
  */
 
-public class EditTextMultiStyle extends AppCompatEditText {
-    public EditTextMultiStyle(Context context) {
+public class EditTextStyleable extends AppCompatEditText {
+    public EditTextStyleable(Context context) {
         super(context);
         doOnCreate();
     }
 
-    public EditTextMultiStyle(Context context, AttributeSet attrs) {
+    public EditTextStyleable(Context context, AttributeSet attrs) {
         super(context, attrs);
         doOnCreate();
     }
 
-    public EditTextMultiStyle(Context context, AttributeSet attrs, int defStyleAttr) {
+    public EditTextStyleable(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         doOnCreate();
     }
