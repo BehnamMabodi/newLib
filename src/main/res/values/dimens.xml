@@ -217,4 +217,6 @@
     <dimen name="material_detailview_padding_start_drawable">32dp</dimen>
     <dimen name="material_detailview_padding_start_line">72dp</dimen>
     <dimen name="material_detailview_padding_end_list_button">30dp</dimen>
+    <dimen name="dialog_activity_min_width">336dp</dimen>
+    <dimen name="dialog_activity_min_height">336dp</dimen>
 </resources>
