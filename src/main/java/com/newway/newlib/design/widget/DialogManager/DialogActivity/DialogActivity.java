@@ -36,16 +36,19 @@ public class DialogActivity extends AppCompatActivity implements View.OnClickLis
 
     @Override
     public void onClick(View view) {
-        if (view == mMainLayout) {
-            onBackPressed();
-        } else if (view == mBtnOK) {
-            CommitChanges();
-            onBackPressed();
-        }
+        if (view == mMainLayout)
+            discardChanges();
+        else if (view == mBtnOK)
+            commitChanges();
+
     }
 
-    protected void CommitChanges() {
+    protected void discardChanges() {
+        onBackPressed();
+    }
 
+    protected void commitChanges() {
+        onBackPressed();
     }
 
 }
