@@ -1,5 +1,6 @@
 package com.newway.newlib.design.widget.DialogManager.DialogActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -13,6 +14,10 @@ import com.newway.newlib.design.widget.view.CheckBoxStyleable;
 
 
 public class MultiSelectList extends DialogActivity {
+
+    public static final String CHECKED_ITEMS = "checked_items";
+    public static final String ITEM_TEXTS = "item_texts";
+    public static final String DEFAULT_ITEM_STATES = "default_item_states";
 
     RecyclerView mRecyclerView;
     boolean[] mCheckListValues;
@@ -28,16 +33,16 @@ public class MultiSelectList extends DialogActivity {
     @Override
     protected void init(Bundle SavedBundle) {
         super.init(SavedBundle);
-        mItemText = getIntent().getExtras().getStringArray("item_texts");
+        mItemText = getIntent().getExtras().getStringArray(ITEM_TEXTS);
         if (SavedBundle == null)
-            mCheckListValues = getIntent().getExtras().getBooleanArray("default_item_states");
+            mCheckListValues = getIntent().getExtras().getBooleanArray(DEFAULT_ITEM_STATES);
         else
-            mCheckListValues = SavedBundle.getBooleanArray("checked_items");
+            mCheckListValues = SavedBundle.getBooleanArray(CHECKED_ITEMS);
 
         mRecyclerView = new RecyclerView(this);
         RecyclerView.LayoutParams params = new RecyclerView.LayoutParams(
                 (int) getResources().getDimension(R.dimen.dialog_activity_min_width),
-                (int) getResources().getDimension(R.dimen.dialog_activity_min_height));
+                ViewGroup.LayoutParams.WRAP_CONTENT);
         mRecyclerView.setLayoutParams(params);
         mFrameLayout.addView(mRecyclerView);
         mRecyclerView.setHasFixedSize(true);
@@ -56,7 +61,7 @@ public class MultiSelectList extends DialogActivity {
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
-        outState.putBooleanArray("checked_items", mCheckListValues);
+        outState.putBooleanArray(CHECKED_ITEMS, mCheckListValues);
         super.onSaveInstanceState(outState);
     }
 
@@ -92,4 +97,18 @@ public class MultiSelectList extends DialogActivity {
         }
     }
 
+    @Override
+    protected void commitChanges() {
+        Intent resultIntent = new Intent();
+        resultIntent.putExtra(CHECKED_ITEMS, mCheckListValues);
+        setResult(RESULT_OK, resultIntent);
+        super.commitChanges();
+    }
+
+    @Override
+    protected void discardChanges() {
+        Intent resultIntent = new Intent();
+        setResult(RESULT_CANCELED, resultIntent);
+        super.discardChanges();
+    }
 }
