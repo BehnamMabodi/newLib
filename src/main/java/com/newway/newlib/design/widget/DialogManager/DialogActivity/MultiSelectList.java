@@ -50,7 +50,7 @@ public class MultiSelectList extends DialogActivity {
     }
 
 
-    class Adapter extends RecyclerView.Adapter<ViewHolder> {
+    private class Adapter extends RecyclerView.Adapter<ViewHolder> {
         @Override
         public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             CheckBoxStyleable checkBoxStyleable = (CheckBoxStyleable) LayoutInflater.from(parent.getContext()).inflate(R.layout.dialog_activity_multi_select_item_layout, parent, false);
@@ -69,7 +69,7 @@ public class MultiSelectList extends DialogActivity {
         }
     }
 
-    class ViewHolder extends RecyclerView.ViewHolder {
+    private class ViewHolder extends RecyclerView.ViewHolder {
         CheckBoxStyleable mCheckBoxStyleable;
 
 
