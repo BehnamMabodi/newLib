@@ -219,4 +219,5 @@
     <dimen name="material_detailview_padding_end_list_button">30dp</dimen>
     <dimen name="dialog_activity_min_width">336dp</dimen>
     <dimen name="dialog_activity_min_height">336dp</dimen>
+    <dimen name="list_item_min_height">48dp</dimen>
 </resources>
