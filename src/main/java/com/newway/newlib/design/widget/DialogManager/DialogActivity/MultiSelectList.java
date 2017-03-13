@@ -15,9 +15,9 @@ import com.newway.newlib.design.widget.view.CheckBoxStyleable;
 
 public class MultiSelectList extends DialogActivity {
 
-    public static final String CHECKED_ITEMS = "checked_items";
-    public static final String ITEM_TEXTS = "item_texts";
-    public static final String DEFAULT_ITEM_STATES = "default_item_states";
+    public static final String KEY_CHECKED_ITEMS = "checked_items";
+    public static final String KEY_ITEM_TEXTS = "item_texts";
+    public static final String KEY_DEFAULT_ITEM_STATES = "default_item_states";
 
     RecyclerView mRecyclerView;
     boolean[] mCheckListValues;
@@ -33,11 +33,11 @@ public class MultiSelectList extends DialogActivity {
     @Override
     protected void init(Bundle SavedBundle) {
         super.init(SavedBundle);
-        mItemText = getIntent().getExtras().getStringArray(ITEM_TEXTS);
+        mItemText = getIntent().getExtras().getStringArray(KEY_ITEM_TEXTS);
         if (SavedBundle == null)
-            mCheckListValues = getIntent().getExtras().getBooleanArray(DEFAULT_ITEM_STATES);
+            mCheckListValues = getIntent().getExtras().getBooleanArray(KEY_DEFAULT_ITEM_STATES);
         else
-            mCheckListValues = SavedBundle.getBooleanArray(CHECKED_ITEMS);
+            mCheckListValues = SavedBundle.getBooleanArray(KEY_CHECKED_ITEMS);
 
         mRecyclerView = new RecyclerView(this);
         RecyclerView.LayoutParams params = new RecyclerView.LayoutParams(
@@ -61,7 +61,7 @@ public class MultiSelectList extends DialogActivity {
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
-        outState.putBooleanArray(CHECKED_ITEMS, mCheckListValues);
+        outState.putBooleanArray(KEY_CHECKED_ITEMS, mCheckListValues);
         super.onSaveInstanceState(outState);
     }
 
@@ -100,7 +100,7 @@ public class MultiSelectList extends DialogActivity {
     @Override
     protected void commitChanges() {
         Intent resultIntent = new Intent();
-        resultIntent.putExtra(CHECKED_ITEMS, mCheckListValues);
+        resultIntent.putExtra(KEY_CHECKED_ITEMS, mCheckListValues);
         setResult(RESULT_OK, resultIntent);
         super.commitChanges();
     }
