@@ -5,5 +5,6 @@
     <dimen name="material_detailview_padding_start_drawable">40dp</dimen>
     <dimen name="material_detailview_padding_start_line">80dp</dimen>
     <dimen name="material_detailview_padding_end_list_button">30dp</dimen>
+    <dimen name="list_item_padding_horizontal_material">40dp</dimen>
 
 </resources>

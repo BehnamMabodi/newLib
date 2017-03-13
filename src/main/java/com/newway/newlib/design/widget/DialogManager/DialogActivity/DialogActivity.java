@@ -24,6 +24,7 @@ public class DialogActivity extends AppCompatActivity implements View.OnClickLis
     FrameLayout mFrameLayout;
     View mBtnOK;
     TextViewStyleable mTvDescription;
+    View mBtnCancel;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -37,11 +38,13 @@ public class DialogActivity extends AppCompatActivity implements View.OnClickLis
         mTvTitle = (TextViewStyleable) findViewById(R.id.tv_title);
         mTvDescription = (TextViewStyleable) findViewById(R.id.tv_description);
         mBtnOK = findViewById(R.id.btn_ok);
+        mBtnCancel = findViewById(R.id.btn_cancel);
         mFrameLayout = (FrameLayout) findViewById(R.id.main_frame);
         setTitle(getIntent().getStringExtra(KEY_TITLE_TEXT));
         setDescription(getIntent().getStringExtra(KEY_DESCRIPTION_TEXT));
 
         mBtnOK.setOnClickListener(this);
+        mBtnCancel.setOnClickListener(this);
         mMainLayout.setOnClickListener(this);
     }
 
@@ -68,7 +71,7 @@ public class DialogActivity extends AppCompatActivity implements View.OnClickLis
 
     @Override
     public void onClick(View view) {
-        if (view == mMainLayout)
+        if (view == mMainLayout || view == mBtnCancel)
             discardChanges();
         else if (view == mBtnOK)
             commitChanges();

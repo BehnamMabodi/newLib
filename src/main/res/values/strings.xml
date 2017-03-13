@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="Save">OK</string>
-    <string name="CANCEL">CANCEL</string>
+    <string name="CANCEL">لغو</string>
     <string name="trans_name_dialog">trans_name_dialog</string>
     <string name="OK">تایید</string>
 </resources>
