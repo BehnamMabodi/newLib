@@ -98,17 +98,11 @@ public class MultiSelectList extends DialogActivity {
     }
 
     @Override
-    protected void commitChanges() {
-        Intent resultIntent = new Intent();
+    protected void commitChanges(Intent resultIntent) {
+        if (resultIntent == null)
+            resultIntent = new Intent();
         resultIntent.putExtra(KEY_CHECKED_ITEMS, mCheckListValues);
-        setResult(RESULT_OK, resultIntent);
-        super.commitChanges();
+        super.commitChanges(resultIntent);
     }
 
-    @Override
-    protected void discardChanges() {
-        Intent resultIntent = new Intent();
-        setResult(RESULT_CANCELED, resultIntent);
-        super.discardChanges();
-    }
 }
