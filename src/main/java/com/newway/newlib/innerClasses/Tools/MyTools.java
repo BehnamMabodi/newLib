@@ -11,6 +11,8 @@ import android.net.Uri;
 import android.os.Build;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
+import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 
 
 /**
@@ -80,6 +82,13 @@ public abstract class MyTools {
 
 
     public static abstract class SystemTools {
+        public static void hideSoftInput(Activity activity, boolean forceHide) {
+            View view = activity.getCurrentFocus();
+            if (view != null || !forceHide) {
+                ((InputMethodManager) activity.getSystemService(Context.INPUT_METHOD_SERVICE)).
+                        hideSoftInputFromWindow(view.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+            }
+        }
 
         public static float dpToPx(float dp) {
             /*// Reference http://stackoverflow.com/questions/8309354/formula-px-to-dp-dp-to-px-android
