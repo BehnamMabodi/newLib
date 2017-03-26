@@ -21,6 +21,7 @@ public class DialogActivity extends AppCompatActivity implements View.OnClickLis
     public static final String KEY_DESCRIPTION_TEXT = "description_text";
     public static final String KEY_BUTTON_OK_TEXT = "button_ok_text";
     public static final String KEY_BUTTON_CANCEL_TEXT = "button_cancel_text";
+    public static final String KEY_CANCELABLE = "cancelable";
 
     String mStrTitle;
     String mStrDescription;
@@ -30,6 +31,7 @@ public class DialogActivity extends AppCompatActivity implements View.OnClickLis
     Button mBtnOK;
     TextViewStyleable mTvDescription;
     Button mBtnCancel;
+    boolean mCancelable;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -48,7 +50,7 @@ public class DialogActivity extends AppCompatActivity implements View.OnClickLis
         setTitle(getIntent().getStringExtra(KEY_TITLE_TEXT));
         setDescription(getIntent().getStringExtra(KEY_DESCRIPTION_TEXT));
         setButtonText(getIntent().getStringExtra(KEY_BUTTON_OK_TEXT), getIntent().getStringExtra(KEY_BUTTON_CANCEL_TEXT), null);
-
+        mCancelable = getIntent().getBooleanExtra(KEY_CANCELABLE, true);
         mBtnOK.setOnClickListener(this);
         mBtnCancel.setOnClickListener(this);
         mMainLayout.setOnClickListener(this);
@@ -57,8 +59,12 @@ public class DialogActivity extends AppCompatActivity implements View.OnClickLis
     private void setButtonText(String buttonTextOK, String buttonTextCancel, String buttonTextNatural) {
         if (buttonTextOK != null)
             mBtnOK.setText(buttonTextOK);
+        else
+            mBtnOK.setVisibility(View.GONE);
         if (buttonTextCancel != null)
             mBtnCancel.setText(buttonTextCancel);
+        else
+            mBtnCancel.setVisibility(View.GONE);
     }
 
     public void setTitle(String title) {
@@ -84,7 +90,7 @@ public class DialogActivity extends AppCompatActivity implements View.OnClickLis
 
     @Override
     public void onClick(View view) {
-        if (view == mMainLayout || view == mBtnCancel)
+        if ((view == mMainLayout && mCancelable) || view == mBtnCancel)
             discardChanges(null);
         else if (view == mBtnOK)
             commitChanges(null);
