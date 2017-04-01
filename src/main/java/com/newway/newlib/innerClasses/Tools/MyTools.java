@@ -14,6 +14,8 @@ import android.util.TypedValue;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
+import java.util.Calendar;
+
 
 /**
  * Created by Golden Phoenix on 05/08/2015.
@@ -263,4 +265,28 @@ public abstract class MyTools {
             return animator;
         }
     }*/
+
+    public static abstract class CalendarTools {
+        public static int getPersianToday() {
+            Calendar calendar = Calendar.getInstance();
+            int day = calendar.get(Calendar.DAY_OF_WEEK);
+            switch (day) {
+                case Calendar.SATURDAY:
+                    return 0;
+                case Calendar.SUNDAY:
+                    return 1;
+                case Calendar.MONDAY:
+                    return 2;
+                case Calendar.TUESDAY:
+                    return 3;
+                case Calendar.WEDNESDAY:
+                    return 4;
+                case Calendar.THURSDAY:
+                    return 5;
+                case Calendar.FRIDAY:
+                    return 6;
+            }
+            return 0;
+        }
+    }
 }
