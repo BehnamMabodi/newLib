@@ -14,7 +14,10 @@ import android.util.TypedValue;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 
 /**
@@ -288,5 +291,13 @@ public abstract class MyTools {
             }
             return 0;
         }
+
+        public static Long getEnglishTodayDate() {
+            DateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
+            Date date = new Date();
+            return Long.parseLong(dateFormat.format(date));
+        }
+
     }
+
 }
