@@ -30,6 +30,11 @@ public abstract class AbsNotificationService {
         mNotificationManager.notify(notificationContainer.getId(), notificationContainer.getNotification());
     }
 
+    public void dismiss(int id) {
+        NotificationManager notificationManager = (NotificationManager) mContext.getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
+        notificationManager.cancel(id);
+    }
+
 
     protected int generateNewId() {
         return mNotifications.size() + 1;
