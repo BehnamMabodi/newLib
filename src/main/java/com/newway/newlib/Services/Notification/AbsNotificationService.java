@@ -31,8 +31,14 @@ public abstract class AbsNotificationService {
     }
 
     public void dismiss(int id) {
-        NotificationManager notificationManager = (NotificationManager) mContext.getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
-        notificationManager.cancel(id);
+        // This ForEach Statement produces runtime eventbus exception
+        for (int i = 0; i < mNotifications.size(); i++) {
+            if (mNotifications.get(i).getId() == id) {
+                NotificationManager notificationManager = (NotificationManager) mContext.getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
+                notificationManager.cancel(id);
+                mNotifications.remove(mNotifications.get(i));
+            }
+        }
     }
 
 
