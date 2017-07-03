@@ -81,6 +81,15 @@ public class BasePreferences {
         return mSPrefs.getInt(name, defaultValue);
     }
 
+    public void putLong(String name, long value) {
+        mSPrefs.edit().putLong(name, value).apply();
+    }
+
+    public long getLong(String name, long defaultValue) {
+        return mSPrefs.getLong(name, defaultValue);
+    }
+
+
     public void putString(String name, String value) {
         mSPrefs.edit().putString(name, value).apply();
     }
