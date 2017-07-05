@@ -2,11 +2,15 @@
 <resources>
 
     <color name="colorPrimary">#a31e07</color>
-    <color name="colorBackgroundMaterialWhite">#ededed</color>
+    <color name="colorBackgroundMaterialWhite">#eeeeee</color>
     <color name="colorMaterialWhite">#f9f9f9</color>
-    <color name="colorMaterialWhiteBackground">#ededed</color>
+    <color name="colorMaterialWhiteBackground">@color/colorBackgroundMaterialWhite</color>
     <color name="colorMaterialWhiteBackground_Lite">#f4f4f4</color>
     <color name="colorTextOverPrimaryBackground">#FFFFFF</color>
     <color name="colorTextTitle">@color/colorPrimary</color>
+
+
+    <color name="colorMaterialTextTitle">#de000000</color>
+    <color name="colorMaterialTextCaption">#8a000000</color>
 
 </resources>
