@@ -85,10 +85,10 @@ public abstract class AbsNotificationService {
         // This ForEach Statement produces runtime eventbus exception
         for (int i = 0; i < mNotifications.size(); i++) {
             if (mNotifications.get(i).getId() == id) {
-                mNotificationManager.cancel(id);
                 mNotifications.remove(mNotifications.get(i));
             }
         }
+        mNotificationManager.cancel(id);
     }
 
 
