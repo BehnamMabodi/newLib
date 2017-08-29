@@ -29,6 +29,11 @@ public abstract class AbsNotificationService {
         mNotifications = new ArrayList<>();
         mContext = context.getApplicationContext();
         mNotificationManager = (NotificationManager) mContext.getSystemService(Context.NOTIFICATION_SERVICE);
+        createChannels();
+    }
+
+    protected void createChannels() {
+
     }
 
 
