@@ -5,6 +5,7 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.util.Log;
 
 import java.util.ArrayList;
@@ -29,12 +30,11 @@ public abstract class AbsNotificationService {
         mNotifications = new ArrayList<>();
         mContext = context.getApplicationContext();
         mNotificationManager = (NotificationManager) mContext.getSystemService(Context.NOTIFICATION_SERVICE);
-        createChannels();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
+            createChannels();
     }
 
-    protected void createChannels() {
-
-    }
+    protected abstract void createChannels();
 
 
     protected void setAlarm(long millis, Intent intent) {
@@ -43,7 +43,10 @@ public abstract class AbsNotificationService {
 
         AlarmManager alarmManager = (AlarmManager) mContext.getSystemService(ALARM_SERVICE);
         // alarmManager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + millis, pendingIntent);
-        alarmManager.set(AlarmManager.RTC_WAKEUP, millis, pendingIntent);
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT)
+            alarmManager.set(AlarmManager.RTC_WAKEUP, millis, pendingIntent);
+        else
+            alarmManager.setExact(AlarmManager.RTC_WAKEUP, millis, pendingIntent);
         System.out.println("Time Total ----- " + (System.currentTimeMillis() + millis));
 
     }
