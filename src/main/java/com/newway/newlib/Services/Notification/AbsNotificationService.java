@@ -51,6 +51,14 @@ public abstract class AbsNotificationService {
 
     }
 
+    protected void cancelAlarm(Intent intent) {
+        AlarmManager alarmManager = (AlarmManager) mContext.getSystemService(ALARM_SERVICE);
+
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(mContext, 120, intent, 0);
+        alarmManager.cancel(pendingIntent);
+
+    }
+
 
     protected long getNearestHour(Calendar... executeTimes) {
         //must use current system time
