@@ -172,6 +172,11 @@ public abstract class MyTools {
             return activeNetworkInfo != null && activeNetworkInfo.isConnected();
         }
 
+        public static void closeNotificationPanel(Context context) {
+            Intent closeNotificationIntent = new Intent(Intent.ACTION_CLOSE_SYSTEM_DIALOGS);
+            context.sendBroadcast(closeNotificationIntent);
+        }
+
 
        /* public int getMaxProperMemoryUsage(Context context)
         {
