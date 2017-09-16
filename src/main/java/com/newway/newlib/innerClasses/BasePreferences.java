@@ -14,6 +14,7 @@ public class BasePreferences {
     protected static boolean mIsInitialized;
     protected static SharedPreferences mSPrefs;
     protected static boolean mForcePersian = false;
+    protected static boolean mForcePersianNumber = false;
     protected static Typeface mTypeFaceMediumPersian;
     protected static Typeface mTypeFaceMediumEnglish;
     protected static Typeface mTypeFaceRegularEnglish;
@@ -63,6 +64,10 @@ public class BasePreferences {
 
     public boolean isForcedPersian() {
         return mForcePersian;
+    }
+
+    public boolean isForcedPersianNumber() {
+        return mForcePersianNumber;
     }
 
     public boolean isFirstUse(String uniqueID) {
