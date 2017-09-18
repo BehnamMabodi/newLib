@@ -6,6 +6,7 @@
     <color name="colorMaterialWhite">#f9f9f9</color>
     <color name="colorMaterialWhiteBackground">@color/colorBackgroundMaterialWhite</color>
     <color name="colorMaterialWhiteBackground_Lite">#f4f4f4</color>
+    <color name="colorMaterialWhiteBackground_NewVersion">#fafafa</color>
     <color name="colorTextOverPrimaryBackground">#FFFFFF</color>
     <color name="colorTextTitle">@color/colorPrimary</color>
 
