@@ -4,5 +4,5 @@
         android:viewportHeight="2.0"
         android:viewportWidth="2.0">
     <path
-        android:fillColor="@android:color/transparent"/>
+        android:fillColor="#00000000"/>
 </vector>
