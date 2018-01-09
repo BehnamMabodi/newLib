@@ -1,24 +1,22 @@
-package com.newway.newlib.design.widget.view;
+package com.newway.newlib.design.widget.view.InputFilter;
 
 import android.text.InputFilter;
 import android.text.Spanned;
 
 /**
- * Created by goldm on 01/01/2018.
+ * Created by goldm on 08/01/2018.
  */
 
-public class InputFilterMinMax implements InputFilter {
+public class InputFilterMin implements InputFilter {
 
-    private int min, max;
+    private int min;
 
-    public InputFilterMinMax(int min, int max) {
+    public InputFilterMin(int min) {
         this.min = min;
-        this.max = max;
     }
 
-    public InputFilterMinMax(String min, String max) {
+    public InputFilterMin(String min) {
         this.min = Integer.parseInt(min);
-        this.max = Integer.parseInt(max);
     }
 
     @Override
@@ -26,14 +24,14 @@ public class InputFilterMinMax implements InputFilter {
     public CharSequence filter(CharSequence source, int start, int end, Spanned dest, int dstart, int dend) {
         try {
             int input = Integer.parseInt(dest.toString() + source.toString());
-            if (isInRange(min, max, input))
+            if (isInRange(min, input))
                 return null;
         } catch (NumberFormatException nfe) {
         }
         return "";
     }
 
-    private boolean isInRange(int a, int b, int c) {
-        return b > a ? c >= a && c <= b : c >= b && c <= a;
+    private boolean isInRange(int a, int c) {
+        return c >= a;
     }
 }
