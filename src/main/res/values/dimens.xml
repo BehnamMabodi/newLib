@@ -219,4 +219,6 @@
     <dimen name="dialog_activity_min_width">336dp</dimen>
     <dimen name="dialog_activity_min_height">336dp</dimen>
     <dimen name="list_item_min_height">48dp</dimen>
+
+    <dimen name="editor_column_list_padding_from_icon">0sp</dimen>
 </resources>

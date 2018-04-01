@@ -7,4 +7,7 @@
     <dimen name="material_detailview_padding_end_list_button">30dp</dimen>
     <dimen name="list_item_padding_horizontal_material">40dp</dimen>
 
+    <dimen name="editor_column_list_padding_from_icon">16dp</dimen>
+
+
 </resources>
