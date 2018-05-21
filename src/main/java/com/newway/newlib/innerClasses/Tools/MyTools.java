@@ -18,6 +18,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.StringTokenizer;
 
 
 /**
@@ -303,6 +304,39 @@ public abstract class MyTools {
             return Long.parseLong(dateFormat.format(date));
         }
 
+    }
+
+
+    public static abstract class StringTools {
+        public static String applyThousandSeparator(String value) {
+            StringTokenizer lst = new StringTokenizer(value, ".");
+            String str1 = value;
+            String str2 = "";
+            if (lst.countTokens() > 1) {
+                str1 = lst.nextToken();
+                str2 = lst.nextToken();
+            }
+            String str3 = "";
+            int i = 0;
+            int j = -1 + str1.length();
+            if (str1.charAt(-1 + str1.length()) == '.') {
+                j--;
+                str3 = ".";
+            }
+            for (int k = j; ; k--) {
+                if (k < 0) {
+                    if (str2.length() > 0)
+                        str3 = str3 + "." + str2;
+                    return str3;
+                }
+                if (i == 3) {
+                    str3 = "," + str3;
+                    i = 0;
+                }
+                str3 = str1.charAt(k) + str3;
+                i++;
+            }
+        }
     }
 
 }
